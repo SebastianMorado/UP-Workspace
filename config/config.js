@@ -9,7 +9,7 @@ var config = {
       name: 'cs192'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/cs192-development'
+    db: process.env.MONGODB_URI || 'mongodb://localhost/cs192-development'
   },
 
   test: {
@@ -18,7 +18,7 @@ var config = {
       name: 'cs192'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/cs192-test'
+    db: process.env.MONGODB_URI ||'mongodb://localhost/cs192-test'
   },
 
   production: {
@@ -27,7 +27,7 @@ var config = {
       name: 'cs192'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/cs192-production'
+    db: process.env.MONGODB_URI || 'mongodb://localhost/cs192-production'
   }
 };
 
