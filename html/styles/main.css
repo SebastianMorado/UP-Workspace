@@ -20,16 +20,17 @@ h1{
 }
 
 #brand{
-  margin-left: 80px;
-  margin-top: 10px;
+  margin-left: 15px;
+  margin-top: 5px;
 }
 
 #register{
   color: black !important;
+  position: absolute;
   font-size: 20px;
   font-weight: 600;
-  margin-right: 20px;
-  padding-top: 20px;
+  right: 20px;
+  top: 27px;
 }
 
 .search_bar{
@@ -129,7 +130,6 @@ h1{
   margin: auto;
   height: 100px;
   margin-bottom: 10px;
-  cursor: pointer;
 }
 
 .large_img{
@@ -138,7 +138,6 @@ h1{
   height: 55px;
   margin-bottom: 10px;
   margin-top: 40px;
-  cursor: pointer;
 }
 
 .filter span{
@@ -146,6 +145,15 @@ h1{
   font-size: 22px;
 }
 
+.filter_option{
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 
 .filter_button{
@@ -208,7 +216,38 @@ h1{
 
 /* If you don't want the footer to be responsive, remove these media queries */
 
-@media (max-width: 600px) {
+@media only screen and (max-width: ){
+
+}
+
+@media only screen and (max-width: 768px) {
+
+  h1{
+    font-size: 26px;
+  }
+
+  .container-1{
+    width: 300px;
+  }
+
+  .container-1 input#search{
+    width: 300px;
+  }
+
+  .filter_option{
+    height: 200px !important;
+  }
+
+  .large_img{
+    height: 50px;
+  }
+
+  .filter span{
+    font-size: 18px;
+  }
+  .filter_button{
+    margin-top: 0px;
+  }
 
 	.footer-basic-centered{
 		padding: 35px;

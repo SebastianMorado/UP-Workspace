@@ -3,7 +3,7 @@
   <meta charset="utf-8"/>
   <link rel="shortcut icon" href="">
   <title>Workspace</title>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./styles/main.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,500,600,700,800,900" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -17,12 +17,13 @@
               <img src="./images/assets-17.png" height="40" class="d-inline-block align-top" alt="" id="brand">
             </a>
           </div>
-          <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="" id="register">Register</a></li>
-            </ul>
-          </div>
+          <!--
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="" id="register">Register</a></li>
+          </ul>
+          -->
         </div>
+
   </nav>
 
   <div class="container-fluid">
@@ -44,27 +45,27 @@
       </div>
     </div>
     <div class="row filter">
-      <div class="col-md-offset-3 col-md-2 col-xs-offset-0 col-xs-6 filter_option" id="wifi">
+      <div class="col-6 col-sm-4 offset-xl-3 col-xl-2 filter_option" id="wifi">
         <img src="./images/assets-06.png" class="small_img" id="wifi_image" />
         <span id="wifi_text">Has Wifi</span>
       </div>
-      <div class="col-md-2 col-xs-offset-0 col-xs-6 filter_option" id="socket">
+      <div class="col-6 col-sm-4 col-xl-2 filter_option" id="socket">
         <img src="./images/assets-07.png" class="small_img" id="socket_image" />
         <span id="socket_text">Has Sockets</span>
       </div>
-      <div class="col-md-2 col-xs-offset-0 col-xs-6 filter_option" id="time">
+      <div class="col-6 col-sm-4 col-xl-2 filter_option" id="time">
         <img src="./images/assets-09.png" class="small_img" id="time_image"/>
         <span id="time_text">Open past 10 pm</span>
       </div>
-      <div class="col-md-offset-3 col-md-2 col-xs-offset-0 col-xs-6 filter_option" id="seating">
+      <div class="col-6 col-sm-4 offset-xl-3 col-xl-2 filter_option" id="seating">
         <img src="./images/assets-11.png" class="large_img" id="seating_image"/>
         <span id="seating_text" style="color:grey;">Any Seating Capacity</span>
       </div>
-      <div class="col-md-2 col-xs-offset-0 col-xs-6 filter_option" id="budget">
+      <div class="col-6 col-sm-4 col-xl-2 filter_option" id="budget">
         <img src="./images/assets-15.png" class="large_img" id="budget_image"/>
         <span id="budget_text" style="color:grey;">Any Budget</span>
       </div>
-      <div class="col-md-2 col-xs-offset-0 col-xs-6 filter_option" id="popularity">
+      <div class="col-6 col-sm-4 col-xl-2 filter_option" id="popularity">
         <img src="./images/assets-01.png" class="large_img" id="popularity_image"/>
         <span id="popularity_text" style="color:grey;">Any Popularity</span>
       </div>
@@ -85,17 +86,16 @@
       ·
       <a href="#">About</a>
       ·
-      <a href="#">Faq</a>
-      ·
-      <a href="#">Contact</a>
+      <a href="#">Register</a>
     </p>
 
     <p class="footer-company-name">MDB & Co. &copy; 2018</p>
 
   </footer>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script>
     $(function(){
       $('#wifi').on('click',function(){
