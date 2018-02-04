@@ -4,7 +4,7 @@
   <link rel="shortcut icon" href="">
   <title>Workspace</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="./styles/main.css">
+  <link rel="stylesheet" type="text/css" href="./styles/register.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,500,600,700,800,900" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -28,53 +28,35 @@
 
   <div class="container-fluid">
     <div class="row" style="background-size: cover; background-position: center 60%; background-image: linear-gradient(rgba(35,35,35,0.5),rgba(35,35,35,0.5)), url(./images/bg_photo2.jpg);">
-      <div class="col-md-12 search_bar">
-          <h1>Find the working space for you</h1>
-          <div class="container-1">
-            <input type="search" id="search" placeholder="Search location or working space" />
-            <button class="icon" id="search_button"><i class="fa fa-search"></i></button>
-          </div>
+      <div class="offset-md-2 col-md-8 search_bar">
+          <h1>Help other students and workers find a work space by signing up and contributing information</h1>
       </div>
     </div>
   </div>
 
-  <div class="container-fluid">
-    <div class="row center_align">
-      <div class="col-md-12">
-        <h1>Or filter for what you need</h1>
-      </div>
+  <div class="row">
+    <!-- Taken from http://cssdeck.com/labs/sleek-sign-up -->
+    <div class="container">
+        <form id="signup">
+            <div class="header">
+              <br />
+                <h3>Sign Up</h3>
+                <p>Fill out the form</p>
+            </div>
+            <div class="sep"></div>
+            <div class="inputs">
+                <input type="email" placeholder="E-mail" autofocus />
+                <input type="password" placeholder="Password" />
+                <input type="password" placeholder="Confirm Password" />
+                <!--
+                <div class="checkboxy">
+                    <input name="cecky" id="checky" value="1" type="checkbox" /><label class="terms">I accept the terms of use</label>
+                </div> -->
+                <a id="submit" href="#">SIGN UP</a>
+            </div>
+        </form>
     </div>
-    <div class="row filter">
-      <div class="col-6 col-sm-4 offset-xl-3 col-xl-2 filter_option" id="wifi">
-        <img src="./images/assets-06.png" class="small_img" id="wifi_image" />
-        <span id="wifi_text">Has Wifi</span>
-      </div>
-      <div class="col-6 col-sm-4 col-xl-2 filter_option" id="socket">
-        <img src="./images/assets-07.png" class="small_img" id="socket_image" />
-        <span id="socket_text">Has Sockets</span>
-      </div>
-      <div class="col-6 col-sm-4 col-xl-2 filter_option" id="time">
-        <img src="./images/assets-09.png" class="small_img" id="time_image"/>
-        <span id="time_text">Open past 10 pm</span>
-      </div>
-      <div class="col-6 col-sm-4 offset-xl-3 col-xl-2 filter_option" id="seating">
-        <img src="./images/assets-11.png" class="large_img" id="seating_image"/>
-        <span id="seating_text" style="color:grey;">Any Seating Capacity</span>
-      </div>
-      <div class="col-6 col-sm-4 col-xl-2 filter_option" id="budget">
-        <img src="./images/assets-15.png" class="large_img" id="budget_image"/>
-        <span id="budget_text" style="color:grey;">Any Budget</span>
-      </div>
-      <div class="col-6 col-sm-4 col-xl-2 filter_option" id="popularity">
-        <img src="./images/assets-01.png" class="large_img" id="popularity_image"/>
-        <span id="popularity_text" style="color:grey;">Any Popularity</span>
-      </div>
-    </div>
-    <div class="row filter_button">
-      <div class="col-md-12">
-        <button id="filter">Go!</button>
-      </div>
-    </div>
+
   </div>
 
   <footer class="footer-basic-centered">

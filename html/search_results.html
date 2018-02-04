@@ -32,7 +32,7 @@
           <h1>Find the working space for you</h1>
           <div class="container-1">
             <input type="search" id="search" placeholder="Search location or working space" />
-            <button class="icon" id="search_button"><i class="fa fa-search"></i></button>
+            <button class="icon"><i class="fa fa-search"></i></button>
           </div>
       </div>
     </div>
@@ -41,39 +41,11 @@
   <div class="container-fluid">
     <div class="row center_align">
       <div class="col-md-12">
-        <h1>Or filter for what you need</h1>
+        <h1>Search results:</h1>
       </div>
     </div>
-    <div class="row filter">
-      <div class="col-6 col-sm-4 offset-xl-3 col-xl-2 filter_option" id="wifi">
-        <img src="./images/assets-06.png" class="small_img" id="wifi_image" />
-        <span id="wifi_text">Has Wifi</span>
-      </div>
-      <div class="col-6 col-sm-4 col-xl-2 filter_option" id="socket">
-        <img src="./images/assets-07.png" class="small_img" id="socket_image" />
-        <span id="socket_text">Has Sockets</span>
-      </div>
-      <div class="col-6 col-sm-4 col-xl-2 filter_option" id="time">
-        <img src="./images/assets-09.png" class="small_img" id="time_image"/>
-        <span id="time_text">Open past 10 pm</span>
-      </div>
-      <div class="col-6 col-sm-4 offset-xl-3 col-xl-2 filter_option" id="seating">
-        <img src="./images/assets-11.png" class="large_img" id="seating_image"/>
-        <span id="seating_text" style="color:grey;">Any Seating Capacity</span>
-      </div>
-      <div class="col-6 col-sm-4 col-xl-2 filter_option" id="budget">
-        <img src="./images/assets-15.png" class="large_img" id="budget_image"/>
-        <span id="budget_text" style="color:grey;">Any Budget</span>
-      </div>
-      <div class="col-6 col-sm-4 col-xl-2 filter_option" id="popularity">
-        <img src="./images/assets-01.png" class="large_img" id="popularity_image"/>
-        <span id="popularity_text" style="color:grey;">Any Popularity</span>
-      </div>
-    </div>
-    <div class="row filter_button">
-      <div class="col-md-12">
-        <button id="filter">Go!</button>
-      </div>
+    <div class="filter">
+
     </div>
   </div>
 
@@ -82,11 +54,11 @@
     <p class="footer-company-motto">Finding the working space best fit for you.</p>
 
     <p class="footer-links">
-      <a href="./index.html">Home</a>
+      <a href="#">Home</a>
       ·
       <a href="#">About</a>
       ·
-      <a href="./register.html">Register</a>
+      <a href="#">Register</a>
     </p>
 
     <p class="footer-company-name">MDB & Co. &copy; 2018</p>
@@ -98,9 +70,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script>
     $(function(){
-      $('#search_button').on('click',function(){
-        window.location.href = "./search_results.html";
-      })
       $('#wifi').on('click',function(){
         if ($('#wifi_text').text() === "Has Wifi"){
           $('#wifi_image').attr("src", "./images/assets-08.png");

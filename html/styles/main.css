@@ -10,6 +10,7 @@ h1{
   margin-bottom: 15px !important;
 }
 
+
 .navbar{
   min-height: 60px;
   background-color: #A9C358;
@@ -21,7 +22,7 @@ h1{
 
 #brand{
   margin-left: 15px;
-  margin-top: 5px;
+  margin-top: 0px;
 }
 
 #register{
@@ -42,15 +43,15 @@ h1{
 
 .container-1{
   overflow: hidden;
-  width: 420px;
+  width: 460px;
   vertical-align: middle;
   white-space: nowrap;
   margin: 0 auto;
 }
 
 .container-1 input#search{
-  width: 420px;
-  height: 42px;
+  width: 460px;
+  height: 46px;
   background: white;
   border: none;
   font-size: 13pt;
@@ -92,7 +93,7 @@ h1{
 
   border: none;
   background: #A9C358;
-  height: 42px;
+  height: 46px;
   width: 50px;
   color: #4f5b66;
   opacity: 0;
@@ -116,7 +117,7 @@ h1{
 }
 
 .center_align{
-  margin-top: 10px;
+  margin-top: 25px;
   text-align: center;
   margin-bottom: 15px;
 }
@@ -216,9 +217,6 @@ h1{
 
 /* If you don't want the footer to be responsive, remove these media queries */
 
-@media only screen and (max-width: ){
-
-}
 
 @media only screen and (max-width: 768px) {
 
