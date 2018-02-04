@@ -1,0 +1,251 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="shortcut icon" href="">
+  <title>Workspace</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./styles/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-default">
+        <div class="container-fluid" id="nav">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="./index.html">
+              <img src="./images/assets-17.png" height="40" class="d-inline-block align-top" alt="" id="brand">
+            </a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="" id="register">Register</a></li>
+            </ul>
+          </div>
+        </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row" style="background-size: cover; background-position: center 60%; background-image: linear-gradient(rgba(35,35,35,0.5),rgba(35,35,35,0.5)), url(./images/bg_photo2.jpg);">
+      <div class="col-md-12 search_bar">
+          <h1>Find the working space for you</h1>
+          <div class="container-1">
+            <input type="search" id="search" placeholder="Search location or working space" />
+            <button class="icon"><i class="fa fa-search"></i></button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row center_align">
+      <div class="col-md-12">
+        <h1>Or filter for what you need</h1>
+      </div>
+    </div>
+    <div class="row filter">
+      <div class="col-md-offset-3 col-md-2 col-xs-offset-0 col-xs-6 filter_option" id="wifi">
+        <img src="./images/assets-06.png" class="small_img" id="wifi_image" />
+        <span id="wifi_text">Has Wifi</span>
+      </div>
+      <div class="col-md-2 col-xs-offset-0 col-xs-6 filter_option" id="socket">
+        <img src="./images/assets-07.png" class="small_img" id="socket_image" />
+        <span id="socket_text">Has Sockets</span>
+      </div>
+      <div class="col-md-2 col-xs-offset-0 col-xs-6 filter_option" id="time">
+        <img src="./images/assets-09.png" class="small_img" id="time_image"/>
+        <span id="time_text">Open past 10 pm</span>
+      </div>
+      <div class="col-md-offset-3 col-md-2 col-xs-offset-0 col-xs-6 filter_option" id="seating">
+        <img src="./images/assets-11.png" class="large_img" id="seating_image"/>
+        <span id="seating_text" style="color:grey;">Any Seating Capacity</span>
+      </div>
+      <div class="col-md-2 col-xs-offset-0 col-xs-6 filter_option" id="budget">
+        <img src="./images/assets-15.png" class="large_img" id="budget_image"/>
+        <span id="budget_text" style="color:grey;">Any Budget</span>
+      </div>
+      <div class="col-md-2 col-xs-offset-0 col-xs-6 filter_option" id="popularity">
+        <img src="./images/assets-01.png" class="large_img" id="popularity_image"/>
+        <span id="popularity_text" style="color:grey;">Any Popularity</span>
+      </div>
+    </div>
+    <div class="row filter_button">
+      <div class="col-md-12">
+        <button id="filter">Go!</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-basic-centered">
+
+    <p class="footer-company-motto">Finding the working space best fit for you.</p>
+
+    <p class="footer-links">
+      <a href="#">Home</a>
+      ·
+      <a href="#">About</a>
+      ·
+      <a href="#">Faq</a>
+      ·
+      <a href="#">Contact</a>
+    </p>
+
+    <p class="footer-company-name">MDB & Co. &copy; 2018</p>
+
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script>
+    $(function(){
+      $('#wifi').on('click',function(){
+        if ($('#wifi_text').text() === "Has Wifi"){
+          $('#wifi_image').attr("src", "./images/assets-08.png");
+          $('#wifi_text').text("Does not need Wifi")
+          $('#wifi_text').css({
+            "color" : "grey"
+          })
+        }
+        else{
+          $('#wifi_image').attr("src", "./images/assets-06.png");
+          $('#wifi_text').text("Has Wifi")
+          $('#wifi_text').css({
+            "color" : "black"
+          })
+        }
+      })
+
+      $('#socket').on('click',function(){
+        if ($('#socket_text').text() === "Has Sockets"){
+          $('#socket_image').attr("src", "./images/assets-05.png");
+          $('#socket_text').text("Does not need sockets")
+          $('#socket_text').css({
+            "color" : "grey"
+          })
+        }
+        else{
+          $('#socket_image').attr("src", "./images/assets-07.png");
+          $('#socket_text').text("Has Sockets")
+          $('#socket_text').css({
+            "color" : "black"
+          })
+        }
+
+      })
+      $('#time').on('click',function(){
+        if ($('#time_text').text() === "Open past 10 pm"){
+          $('#time_image').attr("src", "./images/assets-10.png");
+          $('#time_text').text("No time preference")
+          $('#time_text').css({
+            "color" : "grey"
+          })
+        }
+        else{
+          $('#time_image').attr("src", "./images/assets-09.png");
+          $('#time_text').text("Open past 10 pm")
+          $('#time_text').css({
+            "color" : "black"
+          })
+        }
+
+      })
+      $('#seating').on('click',function(){
+        if ($('#seating_text').text() === "Any Seating Capacity"){
+          $('#seating_image').attr("src", "./images/assets-12.png");
+          $('#seating_text').text("20 Max Capacity")
+          $('#seating_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#seating_text').text() === "20 Max Capacity") {
+          $('#seating_image').attr("src", "./images/assets-13.png");
+          $('#seating_text').text("40 Max Capacity")
+          $('#seating_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#seating_text').text() === "40 Max Capacity") {
+          $('#seating_image').attr("src", "./images/assets-14.png");
+          $('#seating_text').text("60+ Max Capacity")
+          $('#seating_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#seating_text').text() === "60+ Max Capacity") {
+          $('#seating_image').attr("src", "./images/assets-11.png");
+          $('#seating_text').text("Any Seating Capacity")
+          $('#seating_text').css({
+            "color" : "grey"
+          })
+        }
+
+      })
+      $('#budget').on('click',function(){
+        if ($('#budget_text').text() === "Any Budget"){
+          $('#budget_image').attr("src", "./images/assets-16.png");
+          $('#budget_text').text("At most 100 pesos")
+          $('#budget_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#budget_text').text() === "At most 100 pesos") {
+          $('#budget_image').attr("src", "./images/assets-20.png");
+          $('#budget_text').text("At most 300 pesos")
+          $('#budget_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#budget_text').text() === "At most 300 pesos") {
+          $('#budget_image').attr("src", "./images/assets-19.png");
+          $('#budget_text').text("More than 300 pesos")
+          $('#budget_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#budget_text').text() === "More than 300 pesos") {
+          $('#budget_image').attr("src", "./images/assets-15.png");
+          $('#budget_text').text("Any Budget")
+          $('#budget_text').css({
+            "color" : "grey"
+          })
+        }
+
+      })
+
+      $('#popularity').on('click',function(){
+        if ($('#popularity_text').text() === "Any Popularity"){
+          $('#popularity_image').attr("src", "./images/assets-02.png");
+          $('#popularity_text').text("Not Popular")
+          $('#popularity_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#popularity_text').text() === "Not Popular") {
+          $('#popularity_image').attr("src", "./images/assets-03.png");
+          $('#popularity_text').text("Moderately Popular")
+          $('#popularity_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#popularity_text').text() === "Moderately Popular") {
+          $('#popularity_image').attr("src", "./images/assets-04.png");
+          $('#popularity_text').text("Very Popular")
+          $('#popularity_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#popularity_text').text() === "Very Popular") {
+          $('#popularity_image').attr("src", "./images/assets-01.png");
+          $('#popularity_text').text("Any Popularity")
+          $('#popularity_text').css({
+            "color" : "grey"
+          })
+        }
+
+      })
+
+    })
+  </script>
+
+</body>
+</html>
