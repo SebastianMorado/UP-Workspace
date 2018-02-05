@@ -12,12 +12,13 @@ h1{
 
 
 .navbar{
-  min-height: 60px;
-  background-color: #A9C358;
-  margin-bottom: 0px;
+  min-height: 60px !important;
+  background-color: #A9C358 !important;
+  margin-bottom: 0px !important;
 }
-.navbar-brand{
-  padding: 0px;
+
+#sign-out{
+  display: none;
 }
 
 #brand{
@@ -96,24 +97,11 @@ h1{
   height: 46px;
   width: 50px;
   color: #4f5b66;
-  opacity: 0;
-  font-size: 10pt;
-
-  -webkit-transition: all .55s ease;
-  -moz-transition: all .55s ease;
-  -ms-transition: all .55s ease;
-  -o-transition: all .55s ease;
-  transition: all .55s ease;
-}
-
-.container-1:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
-  outline: none;
   opacity: 1;
+  font-size: 10pt;
   margin-left: -50px;
-}
+  outline: none;
 
-.container-1:hover button.icon:hover{
-  background: #A9C358;
 }
 
 .center_align{

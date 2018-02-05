@@ -41,27 +41,14 @@
     </div>
   </div>
 
-  <!-- This container displays when user successfully signs up-->
-  <div class="row" id="message_container">
-    <div class ="container">
-      <div id="message">
-        <div class="header">
-          <br />
-          <img src="./images/success.png" height="22"/>
-          <h3>Successful Sign-up!</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- This container displays when user signs up with a duplicate email-->
+  <!-- This container displays when user puts wrong credentials-->
   <div class="row" id="invalid_container">
     <div class ="container">
       <div id="message">
         <div class="header">
           <br />
           <img src="./images/close.png" height="22"/>
-          <h3>Invalid Sign-up. Duplicate Email.</h3>
+          <h3>Invalid email or password.</h3>
         </div>
       </div>
     </div>
@@ -73,19 +60,13 @@
       <form id="signup">
           <div class="header">
             <br />
-              <h3>Sign Up</h3>
-              <p>Fill out the form</p>
+              <h3>Sign In</h3>
           </div>
           <div class="sep"></div>
           <div class="inputs">
               <input type="email" placeholder="E-mail" autofocus />
               <input type="password" placeholder="Password" />
-              <input type="password" placeholder="Confirm Password" />
-              <!--
-              <div class="checkboxy">
-                  <input name="cecky" id="checky" value="1" type="checkbox" /><label class="terms">I accept the terms of use</label>
-              </div> -->
-              <a id="submit" href="#">SIGN UP</a>
+              <a id="submit" href="#">SIGN IN</a>
           </div>
       </form>
     </div>
