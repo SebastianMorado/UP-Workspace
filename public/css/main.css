@@ -1,0 +1,258 @@
+
+
+
+body{
+  font-family: 'Myriad Pro', sans-serif;
+}
+
+h1{
+  font-size: 40px;
+  margin-bottom: 15px !important;
+}
+
+
+.navbar{
+  min-height: 60px !important;
+  background-color: #A9C358 !important;
+  margin-bottom: 0px !important;
+}
+
+#sign-out{
+  display: none;
+}
+
+#brand{
+  margin-left: 15px;
+  margin-top: 0px;
+}
+
+#register{
+  color: black !important;
+  position: absolute;
+  font-size: 20px;
+  font-weight: 600;
+  right: 20px;
+  top: 27px;
+}
+
+.search_bar{
+  text-align: center;
+  color: white;
+  padding-bottom: 80px;
+  padding-top: 70px;
+}
+
+.container-1{
+  overflow: hidden;
+  width: 460px;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin: 0 auto;
+}
+
+.container-1 input#search{
+  width: 460px;
+  height: 46px;
+  background: white;
+  border: none;
+  font-size: 13pt;
+  float: left;
+  color: grey;
+  padding-left: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 15px;
+}
+
+.container-1 input#search::-webkit-input-placeholder {
+   color: #999999;
+   font-style: italic;
+}
+
+.container-1 input#search:-moz-placeholder { /* Firefox 18- */
+   color: #999999;
+   font-style: italic;
+}
+
+.container-1 input#search::-moz-placeholder {  /* Firefox 19+ */
+   color: #999999;
+   font-style: italic;
+}
+
+.container-1 input#search:-ms-input-placeholder {
+   color: #999999;
+   font-style: italic;
+}
+
+.container-1 button.icon{
+  -webkit-border-top-right-radius: 15px;
+  -webkit-border-bottom-right-radius: 15px;
+  -moz-border-radius-topright: 15px;
+  -moz-border-radius-bottomright: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+
+  border: none;
+  background: #A9C358;
+  height: 46px;
+  width: 50px;
+  color: #4f5b66;
+  opacity: 1;
+  font-size: 10pt;
+  margin-left: -50px;
+  outline: none;
+
+}
+
+.center_align{
+  margin-top: 25px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.filter{
+  text-align: center;
+}
+
+.small_img{
+  display: block;
+  margin: auto;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.large_img{
+  display: block;
+  margin: auto;
+  height: 55px;
+  margin-bottom: 10px;
+  margin-top: 40px;
+}
+
+.filter span{
+  font-weight: 800;
+  font-size: 22px;
+}
+
+.filter_option{
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.filter_button{
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#filter{
+  width: 130px;
+  height: 50px;
+  font-size: 22px;
+  font-weight: 800;
+  background-color: white;
+  border-color: #A9C358;
+  border-radius: 10px;
+  color: #A9C358;
+  border-width: thin;
+  background-image: none;
+  border-style: solid;
+}
+
+.footer-basic-centered{
+	background-color: #64762A;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: center;
+	font: normal 18px sans-serif;
+
+	padding: 45px;
+	margin-top: 80px;
+}
+
+.footer-basic-centered .footer-company-motto{
+	color:  #8d9093;
+	font-size: 24px;
+	margin: 0;
+}
+
+.footer-basic-centered .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	margin: 0;
+}
+
+.footer-basic-centered .footer-links{
+	list-style: none;
+	font-weight: bold;
+	color:  #ffffff;
+	padding: 35px 0 23px;
+	margin: 0;
+}
+
+.footer-basic-centered .footer-links a{
+	display:inline-block;
+	text-decoration: none;
+	color: inherit;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+
+@media only screen and (max-width: 768px) {
+
+  h1{
+    font-size: 26px;
+  }
+
+  .container-1{
+    width: 300px;
+  }
+
+  .container-1 input#search{
+    width: 300px;
+  }
+
+  .filter_option{
+    height: 200px !important;
+  }
+
+  .large_img{
+    height: 50px;
+  }
+
+  .filter span{
+    font-size: 18px;
+  }
+  .filter_button{
+    margin-top: 0px;
+  }
+
+	.footer-basic-centered{
+		padding: 35px;
+	}
+
+	.footer-basic-centered .footer-company-motto{
+		font-size: 18px;
+	}
+
+	.footer-basic-centered .footer-company-name{
+		font-size: 12px;
+	}
+
+	.footer-basic-centered .footer-links{
+		font-size: 14px;
+		padding: 25px 0 20px;
+	}
+
+	.footer-basic-centered .footer-links a{
+		line-height: 1.8;
+	}
+}

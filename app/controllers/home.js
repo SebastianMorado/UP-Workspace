@@ -21,10 +21,28 @@ router.get('/registration', function(req, res, next){
   return res.render('registration')
 });
 
+router.get('/signin', function(req, res, next){
+  return res.render('signin')
+});
+
 
 router.post('/registration', function(req, res, next){
-  var user = req.body;
-  User.create(user, function(err, user){
-    return res.send("user created");
-  })
+  var user_fields = req.body;
+  console.log(user_fields)
+
+  User.findOne({email: user_fields.email}, function(err, user){
+    console.log("USER: ", user)
+    if(user == null ){
+      User.create(user_fields, function(err, user){
+        console.log(user)
+        return res.render('signin', {message:"account created!"});
+      })
+    }else{
+      return res.render('registration',{message:"Email is already used"});
+
+    }
+    
+  }) 
+ 
+
 });

@@ -37,7 +37,17 @@ html
         .offset-md-2.col-md-8.search_bar
           h1
             | Help other students and workers find a work space by signing up and contributing information
-    // This container displays when user signs up with a duplicate email
+    // This container displays when user successfully signs up
+    #message_container.row
+      .container
+        #message
+          .header
+            br
+            |           
+            img(src='./images/success.png', height='22')
+            |           
+            h3 Successful Sign-up!
+    // This container displays when user puts wrong credentials
     #invalid_container.row
       .container
         #message
@@ -46,31 +56,27 @@ html
             |           
             img(src='./images/close.png', height='22')
             |           
-            h3 Invalid Sign-up. Duplicate Email.
+            h3 Invalid email or password.
     |   
     .row
       // Taken from http://cssdeck.com/labs/sleek-sign-up
       #signup_container.container
-        form#signup(method="POST",action="/registration")
-          if message != null
-            .alert.alert-danger(role='alert') #{message}
-
+        form#signup
           .header
             br
             |               
-            h3 Sign Up
-            |               
-            p Fill out the form
+            h3 Sign In
+            if message != null
+              .alert.alert-success(role='alert') #{message}
           |           
           .sep
           |           
           .inputs
-            input(type='email', placeholder='E-mail', autofocus='', name='email')             
-            input(type='password', placeholder='Password',name='password')
-                    
-            input(type='password', placeholder='Confirm Password')
-  
-            button#submit(type='submit') SIGN UP
+            input(type='email', placeholder='E-mail', autofocus='')
+            |               
+            input(type='password', placeholder='Password')
+            |               
+            a#submit(href='#') SIGN IN
     |   
     footer.footer-basic-centered
       p.footer-company-motto Finding the working space best fit for you.
