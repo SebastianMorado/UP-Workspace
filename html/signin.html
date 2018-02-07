@@ -1,0 +1,263 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="shortcut icon" href="">
+  <title>Workspace</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./styles/register.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="./index.html">
+      <img src="./images/assets-17.png" height="40" class="d-inline-block align-top" alt="" id="brand">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse navbar-right" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="./register.html">Register</a>
+        </li>
+        <li class="nav-item" id="sign-in">
+          <a class="nav-link" href="./signin.html">Sign-in</a>
+        </li>
+        <li class="nav-item" id="sign-out">
+          <a class="nav-link" href="./index.html">Sign-out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row" style="background-size: cover; background-position: center 60%; background-image: linear-gradient(rgba(35,35,35,0.5),rgba(35,35,35,0.5)), url(./images/bg_photo2.jpg);">
+      <div class="offset-md-2 col-md-8 search_bar">
+          <h1>Help other students and workers find a work space by signing up and contributing information</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- This container displays when user successfully signs up-->
+  <div class="row" id="message_container">
+    <div class ="container">
+      <div id="message">
+        <div class="header">
+          <br />
+          <img src="./images/success.png" height="22"/>
+          <h3>Successful Sign-up!</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- This container displays when user puts wrong credentials-->
+  <div class="row" id="invalid_container">
+    <div class ="container">
+      <div id="message">
+        <div class="header">
+          <br />
+          <img src="./images/close.png" height="22"/>
+          <h3>Invalid email or password.</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Taken from http://cssdeck.com/labs/sleek-sign-up -->
+    <div class="container" id="signup_container">
+      <form id="signup">
+          <div class="header">
+            <br />
+              <h3>Sign In</h3>
+          </div>
+          <div class="sep"></div>
+          <div class="inputs">
+              <input type="email" placeholder="E-mail" autofocus />
+              <input type="password" placeholder="Password" />
+              <a id="submit" href="#">SIGN IN</a>
+          </div>
+      </form>
+    </div>
+
+  </div>
+
+  <footer class="footer-basic-centered">
+
+    <p class="footer-company-motto">Finding the working space best fit for you.</p>
+
+    <p class="footer-links">
+      <a href="./index.html">Home</a>
+      ·
+      <a href="#">About</a>
+      ·
+      <a href="./register.html">Register</a>
+    </p>
+
+    <p class="footer-company-name">MDB & Co. &copy; 2018</p>
+
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script>
+    $(function(){
+      $('#search_button').on('click',function(){
+        window.location.href = "./search_results.html";
+      })
+      $('#wifi').on('click',function(){
+        if ($('#wifi_text').text() === "Has Wifi"){
+          $('#wifi_image').attr("src", "./images/assets-08.png");
+          $('#wifi_text').text("Does not need Wifi")
+          $('#wifi_text').css({
+            "color" : "grey"
+          })
+        }
+        else{
+          $('#wifi_image').attr("src", "./images/assets-06.png");
+          $('#wifi_text').text("Has Wifi")
+          $('#wifi_text').css({
+            "color" : "black"
+          })
+        }
+      })
+
+      $('#socket').on('click',function(){
+        if ($('#socket_text').text() === "Has Sockets"){
+          $('#socket_image').attr("src", "./images/assets-05.png");
+          $('#socket_text').text("Does not need sockets")
+          $('#socket_text').css({
+            "color" : "grey"
+          })
+        }
+        else{
+          $('#socket_image').attr("src", "./images/assets-07.png");
+          $('#socket_text').text("Has Sockets")
+          $('#socket_text').css({
+            "color" : "black"
+          })
+        }
+
+      })
+      $('#time').on('click',function(){
+        if ($('#time_text').text() === "Open past 10 pm"){
+          $('#time_image').attr("src", "./images/assets-10.png");
+          $('#time_text').text("No time preference")
+          $('#time_text').css({
+            "color" : "grey"
+          })
+        }
+        else{
+          $('#time_image').attr("src", "./images/assets-09.png");
+          $('#time_text').text("Open past 10 pm")
+          $('#time_text').css({
+            "color" : "black"
+          })
+        }
+
+      })
+      $('#seating').on('click',function(){
+        if ($('#seating_text').text() === "Any Seating Capacity"){
+          $('#seating_image').attr("src", "./images/assets-12.png");
+          $('#seating_text').text("20 Max Capacity")
+          $('#seating_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#seating_text').text() === "20 Max Capacity") {
+          $('#seating_image').attr("src", "./images/assets-13.png");
+          $('#seating_text').text("40 Max Capacity")
+          $('#seating_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#seating_text').text() === "40 Max Capacity") {
+          $('#seating_image').attr("src", "./images/assets-14.png");
+          $('#seating_text').text("60+ Max Capacity")
+          $('#seating_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#seating_text').text() === "60+ Max Capacity") {
+          $('#seating_image').attr("src", "./images/assets-11.png");
+          $('#seating_text').text("Any Seating Capacity")
+          $('#seating_text').css({
+            "color" : "grey"
+          })
+        }
+
+      })
+      $('#budget').on('click',function(){
+        if ($('#budget_text').text() === "Any Budget"){
+          $('#budget_image').attr("src", "./images/assets-16.png");
+          $('#budget_text').text("At most 100 pesos")
+          $('#budget_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#budget_text').text() === "At most 100 pesos") {
+          $('#budget_image').attr("src", "./images/assets-20.png");
+          $('#budget_text').text("At most 300 pesos")
+          $('#budget_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#budget_text').text() === "At most 300 pesos") {
+          $('#budget_image').attr("src", "./images/assets-19.png");
+          $('#budget_text').text("More than 300 pesos")
+          $('#budget_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#budget_text').text() === "More than 300 pesos") {
+          $('#budget_image').attr("src", "./images/assets-15.png");
+          $('#budget_text').text("Any Budget")
+          $('#budget_text').css({
+            "color" : "grey"
+          })
+        }
+
+      })
+
+      $('#popularity').on('click',function(){
+        if ($('#popularity_text').text() === "Any Popularity"){
+          $('#popularity_image').attr("src", "./images/assets-02.png");
+          $('#popularity_text').text("Not Popular")
+          $('#popularity_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#popularity_text').text() === "Not Popular") {
+          $('#popularity_image').attr("src", "./images/assets-03.png");
+          $('#popularity_text').text("Moderately Popular")
+          $('#popularity_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#popularity_text').text() === "Moderately Popular") {
+          $('#popularity_image').attr("src", "./images/assets-04.png");
+          $('#popularity_text').text("Very Popular")
+          $('#popularity_text').css({
+            "color" : "black"
+          })
+        }
+        else if ($('#popularity_text').text() === "Very Popular") {
+          $('#popularity_image').attr("src", "./images/assets-01.png");
+          $('#popularity_text').text("Any Popularity")
+          $('#popularity_text').css({
+            "color" : "grey"
+          })
+        }
+
+      })
+
+    })
+  </script>
+
+</body>
+</html>
