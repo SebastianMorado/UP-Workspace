@@ -1,3 +1,13 @@
+/*
+  “This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2017-2018”
+
+  Authored by Edmund Alwin D. de Leon
+*/
+
+/*
+2/2/18
+added routes to pages and route to create user
+*/
 var express = require('express'),
   router = express.Router(),
   mongoose = require('mongoose'),
@@ -8,13 +18,7 @@ module.exports = function (app) {
 };
 
 router.get('/', function (req, res, next) {
-  Article.find(function (err, articles) {
-    if (err) return next(err);
-    res.render('home', {
-      title: 'Generator-Express MVC',
-      articles: articles
-    });
-  });
+    res.render('home');
 });
 
 router.get('/registration', function(req, res, next){
