@@ -114,17 +114,26 @@ Authored by Sebastian Morado
          if($('#password').val() === $('#confirm_password').val() && $('#password').val().length >= 6 && $('#email').val().includes("@") && $('#email').val().length >= 6){
            $('#submit').prop('disabled', false);
          }
+         else{
+           $('#submit').prop('disabled', true);
+         }
       });
 
       $('#confirm_password').change(function(event){
          if($('#password').val() === $('#confirm_password').val() && $('#password').val().length >= 6 && $('#email').val().includes("@") && $('#email').val().length >= 6){
            $('#submit').prop('disabled', false);
          }
+         else{
+           $('#submit').prop('disabled', true);
+         }
       });
 
       $('#email').change(function(event){
          if($('#password').val() === $('#confirm_password').val() && $('#password').val().length >= 6 && $('#email').val().includes("@") && $('#email').val().length >= 6){
            $('#submit').prop('disabled', false);
+         }
+         else{
+           $('#submit').prop('disabled', true);
          }
       });
 
