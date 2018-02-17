@@ -1,3 +1,10 @@
+<!--
+“This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2017-2018”
+
+Authored by Sebastian Morado
+-->
+
+
 <html>
 <head>
   <meta charset="utf-8"/>
@@ -9,7 +16,10 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-
+  <!--
+  February 3, 2018, Sebastian Morado
+  Initial html code for sign in box
+  -->
   <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="./index.html">
       <img src="./images/assets-17.png" height="40" class="d-inline-block align-top" alt="" id="brand">
@@ -77,9 +87,9 @@
           </div>
           <div class="sep"></div>
           <div class="inputs">
-              <input type="email" placeholder="E-mail" autofocus />
-              <input type="password" placeholder="Password" />
-              <a id="submit" href="#">SIGN IN</a>
+              <input type="email" placeholder="E-mail" autofocus id="email" />
+              <input type="password" placeholder="Password" id="password"/>
+              <button id="submit" href="#" disabled>SIGN IN</button>
           </div>
       </form>
     </div>
@@ -107,154 +117,21 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script>
     $(function(){
+      //February 17, 2018, Sebastian Morado
+      //initial code that checks the form input of the user and enables button when valid
       $('#search_button').on('click',function(){
         window.location.href = "./search_results.html";
       })
-      $('#wifi').on('click',function(){
-        if ($('#wifi_text').text() === "Has Wifi"){
-          $('#wifi_image').attr("src", "./images/assets-08.png");
-          $('#wifi_text').text("Does not need Wifi")
-          $('#wifi_text').css({
-            "color" : "grey"
-          })
-        }
-        else{
-          $('#wifi_image').attr("src", "./images/assets-06.png");
-          $('#wifi_text').text("Has Wifi")
-          $('#wifi_text').css({
-            "color" : "black"
-          })
-        }
-      })
-
-      $('#socket').on('click',function(){
-        if ($('#socket_text').text() === "Has Sockets"){
-          $('#socket_image').attr("src", "./images/assets-05.png");
-          $('#socket_text').text("Does not need sockets")
-          $('#socket_text').css({
-            "color" : "grey"
-          })
-        }
-        else{
-          $('#socket_image').attr("src", "./images/assets-07.png");
-          $('#socket_text').text("Has Sockets")
-          $('#socket_text').css({
-            "color" : "black"
-          })
-        }
-
-      })
-      $('#time').on('click',function(){
-        if ($('#time_text').text() === "Open past 10 pm"){
-          $('#time_image').attr("src", "./images/assets-10.png");
-          $('#time_text').text("No time preference")
-          $('#time_text').css({
-            "color" : "grey"
-          })
-        }
-        else{
-          $('#time_image').attr("src", "./images/assets-09.png");
-          $('#time_text').text("Open past 10 pm")
-          $('#time_text').css({
-            "color" : "black"
-          })
-        }
-
-      })
-      $('#seating').on('click',function(){
-        if ($('#seating_text').text() === "Any Seating Capacity"){
-          $('#seating_image').attr("src", "./images/assets-12.png");
-          $('#seating_text').text("20 Max Capacity")
-          $('#seating_text').css({
-            "color" : "black"
-          })
-        }
-        else if ($('#seating_text').text() === "20 Max Capacity") {
-          $('#seating_image').attr("src", "./images/assets-13.png");
-          $('#seating_text').text("40 Max Capacity")
-          $('#seating_text').css({
-            "color" : "black"
-          })
-        }
-        else if ($('#seating_text').text() === "40 Max Capacity") {
-          $('#seating_image').attr("src", "./images/assets-14.png");
-          $('#seating_text').text("60+ Max Capacity")
-          $('#seating_text').css({
-            "color" : "black"
-          })
-        }
-        else if ($('#seating_text').text() === "60+ Max Capacity") {
-          $('#seating_image').attr("src", "./images/assets-11.png");
-          $('#seating_text').text("Any Seating Capacity")
-          $('#seating_text').css({
-            "color" : "grey"
-          })
-        }
-
-      })
-      $('#budget').on('click',function(){
-        if ($('#budget_text').text() === "Any Budget"){
-          $('#budget_image').attr("src", "./images/assets-16.png");
-          $('#budget_text').text("At most 100 pesos")
-          $('#budget_text').css({
-            "color" : "black"
-          })
-        }
-        else if ($('#budget_text').text() === "At most 100 pesos") {
-          $('#budget_image').attr("src", "./images/assets-20.png");
-          $('#budget_text').text("At most 300 pesos")
-          $('#budget_text').css({
-            "color" : "black"
-          })
-        }
-        else if ($('#budget_text').text() === "At most 300 pesos") {
-          $('#budget_image').attr("src", "./images/assets-19.png");
-          $('#budget_text').text("More than 300 pesos")
-          $('#budget_text').css({
-            "color" : "black"
-          })
-        }
-        else if ($('#budget_text').text() === "More than 300 pesos") {
-          $('#budget_image').attr("src", "./images/assets-15.png");
-          $('#budget_text').text("Any Budget")
-          $('#budget_text').css({
-            "color" : "grey"
-          })
-        }
-
-      })
-
-      $('#popularity').on('click',function(){
-        if ($('#popularity_text').text() === "Any Popularity"){
-          $('#popularity_image').attr("src", "./images/assets-02.png");
-          $('#popularity_text').text("Not Popular")
-          $('#popularity_text').css({
-            "color" : "black"
-          })
-        }
-        else if ($('#popularity_text').text() === "Not Popular") {
-          $('#popularity_image').attr("src", "./images/assets-03.png");
-          $('#popularity_text').text("Moderately Popular")
-          $('#popularity_text').css({
-            "color" : "black"
-          })
-        }
-        else if ($('#popularity_text').text() === "Moderately Popular") {
-          $('#popularity_image').attr("src", "./images/assets-04.png");
-          $('#popularity_text').text("Very Popular")
-          $('#popularity_text').css({
-            "color" : "black"
-          })
-        }
-        else if ($('#popularity_text').text() === "Very Popular") {
-          $('#popularity_image').attr("src", "./images/assets-01.png");
-          $('#popularity_text').text("Any Popularity")
-          $('#popularity_text').css({
-            "color" : "grey"
-          })
-        }
-
-      })
+      $('#password').change(function(event){
+         if($('#password').val().length >= 6 && $('#email').val().includes("@") && $('#email').val().length >= 6){
+           $('#submit').prop('disabled', false);
+         }
+      });
+      $('#email').change(function(event){
+         if($('#password').val().length >= 6 && $('#email').val().includes("@") && $('#email').val().length >= 6){
+           $('#submit').prop('disabled', false);
+         }
+      });
 
     })
   </script>
