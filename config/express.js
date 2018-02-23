@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
+var session = require('express-session');
 
 module.exports = function(app, config) {
   var env = process.env.NODE_ENV || 'development';
@@ -22,7 +23,8 @@ module.exports = function(app, config) {
   app.use(bodyParser.urlencoded({
     extended: true
   }));
-  app.use(cookieParser());
+  app.use(cookieParser('55555'));
+  app.use(session({secret:'55555'}))
   app.use(compress());
   app.use(express.static(config.root + '/public'));
   app.use(methodOverride());

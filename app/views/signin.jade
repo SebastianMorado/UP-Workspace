@@ -1,8 +1,6 @@
 //
   “This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2017-2018”
-
   Authored by Sebastian Morado
-
 html
   head
     meta(charset='utf-8')
@@ -23,7 +21,7 @@ html
       February 3, 2018, Sebastian Morado
       Initial html code for sign in box
     nav.navbar.navbar-expand-lg.navbar-light
-      a.navbar-brand(href='/')
+      a.navbar-brand(href='./index.html')
         img#brand.d-inline-block.align-top(src='./images/assets-17.png', height='40', alt='')
       |     
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarTogglerDemo02', aria-controls='navbarTogglerDemo02', aria-expanded='false', aria-label='Toggle navigation')
@@ -33,12 +31,7 @@ html
         ul.navbar-nav.ml-auto.mt-2.mt-lg-0
           li.nav-item
             a.nav-link(href='/registration') Register
-          |         
-          li#sign-in.nav-item
-            a.nav-link(href='/signin') Sign-in
-          |         
-          li#sign-out.nav-item
-            a.nav-link(href='./index.html') Sign-out
+          
     |   
     .container-fluid
       .row(style='background-size: cover; background-position: center 60%; background-image: linear-gradient(rgba(35,35,35,0.5),rgba(35,35,35,0.5)), url(./images/bg_photo2.jpg);')
@@ -56,47 +49,44 @@ html
             |           
             h3 Successful Sign-up!
     // This container displays when user puts wrong credentials
-    #invalid_container.row
-      .container
-        #message
-          .header
-            br
-            |           
-            img(src='./images/close.png', height='22')
-            |           
-            h3 Invalid email or password.
+    if message != null
+      .row
+        .container
+          #message
+            .header
+              br
+              |           
+              h3 #{message}
     |   
     .row
       // Taken from http://cssdeck.com/labs/sleek-sign-up
       #signup_container.container
-        form#signup
+        form#signup(method='post', action='/login')
           .header
             br
             |               
             h3 Sign In
-            if message != null
-              .alert.alert-success(role='alert') #{message}
           |           
           .sep
           |           
           .inputs
-            input(type='email', placeholder='E-mail', autofocus='')
+            input#email(type='email', placeholder='E-mail', autofocus='',name='email')
             |               
-            input(type='password', placeholder='Password')
+            input#password(type='password', placeholder='Password',name='password')
             |               
-            a#submit(href='#') SIGN IN
+            button#submit(href='#', disabled='',type='submit') SIGN IN
     |   
     footer.footer-basic-centered
       p.footer-company-motto Finding the working space best fit for you.
       |     
       p.footer-links
-        a(href='./index.html') Home
+        a(href='/') Home
         |       &middot;
         |       
         a(href='#') About
         |       &middot;
         |       
-        a(href='./register.html') Register
+        a(href='/registration') Register
       |     
       p.footer-company-name MDB &amp; Co. &copy; 2018
     |   
@@ -108,145 +98,25 @@ html
     |   
     script.
       $(function(){
+      //February 17, 2018, Sebastian Morado
+      //initial code that checks the form input of the user and enables button when valid
       $('#search_button').on('click',function(){
       window.location.href = "./search_results.html";
       })
-      $('#wifi').on('click',function(){
-      if ($('#wifi_text').text() === "Has Wifi"){
-      $('#wifi_image').attr("src", "./images/assets-08.png");
-      $('#wifi_text').text("Does not need Wifi")
-      $('#wifi_text').css({
-      "color" : "grey"
-      })
+      $('#password').change(function(event){
+      if($('#password').val().length >= 6 && $('#email').val().includes("@") && $('#email').val().length >= 6){
+      $('#submit').prop('disabled', false);
       }
       else{
-      $('#wifi_image').attr("src", "./images/assets-06.png");
-      $('#wifi_text').text("Has Wifi")
-      $('#wifi_text').css({
-      "color" : "black"
-      })
+      $('#submit').prop('disabled', true);
       }
-      })
-      $('#socket').on('click',function(){
-      if ($('#socket_text').text() === "Has Sockets"){
-      $('#socket_image').attr("src", "./images/assets-05.png");
-      $('#socket_text').text("Does not need sockets")
-      $('#socket_text').css({
-      "color" : "grey"
-      })
+      });
+      $('#email').change(function(event){
+      if($('#password').val().length >= 6 && $('#email').val().includes("@") && $('#email').val().length >= 6){
+      $('#submit').prop('disabled', false);
       }
       else{
-      $('#socket_image').attr("src", "./images/assets-07.png");
-      $('#socket_text').text("Has Sockets")
-      $('#socket_text').css({
-      "color" : "black"
-      })
+      $('#submit').prop('disabled', true);
       }
-      })
-      $('#time').on('click',function(){
-      if ($('#time_text').text() === "Open past 10 pm"){
-      $('#time_image').attr("src", "./images/assets-10.png");
-      $('#time_text').text("No time preference")
-      $('#time_text').css({
-      "color" : "grey"
-      })
-      }
-      else{
-      $('#time_image').attr("src", "./images/assets-09.png");
-      $('#time_text').text("Open past 10 pm")
-      $('#time_text').css({
-      "color" : "black"
-      })
-      }
-      })
-      $('#seating').on('click',function(){
-      if ($('#seating_text').text() === "Any Seating Capacity"){
-      $('#seating_image').attr("src", "./images/assets-12.png");
-      $('#seating_text').text("20 Max Capacity")
-      $('#seating_text').css({
-      "color" : "black"
-      })
-      }
-      else if ($('#seating_text').text() === "20 Max Capacity") {
-      $('#seating_image').attr("src", "./images/assets-13.png");
-      $('#seating_text').text("40 Max Capacity")
-      $('#seating_text').css({
-      "color" : "black"
-      })
-      }
-      else if ($('#seating_text').text() === "40 Max Capacity") {
-      $('#seating_image').attr("src", "./images/assets-14.png");
-      $('#seating_text').text("60+ Max Capacity")
-      $('#seating_text').css({
-      "color" : "black"
-      })
-      }
-      else if ($('#seating_text').text() === "60+ Max Capacity") {
-      $('#seating_image').attr("src", "./images/assets-11.png");
-      $('#seating_text').text("Any Seating Capacity")
-      $('#seating_text').css({
-      "color" : "grey"
-      })
-      }
-      })
-      $('#budget').on('click',function(){
-      if ($('#budget_text').text() === "Any Budget"){
-      $('#budget_image').attr("src", "./images/assets-16.png");
-      $('#budget_text').text("At most 100 pesos")
-      $('#budget_text').css({
-      "color" : "black"
-      })
-      }
-      else if ($('#budget_text').text() === "At most 100 pesos") {
-      $('#budget_image').attr("src", "./images/assets-20.png");
-      $('#budget_text').text("At most 300 pesos")
-      $('#budget_text').css({
-      "color" : "black"
-      })
-      }
-      else if ($('#budget_text').text() === "At most 300 pesos") {
-      $('#budget_image').attr("src", "./images/assets-19.png");
-      $('#budget_text').text("More than 300 pesos")
-      $('#budget_text').css({
-      "color" : "black"
-      })
-      }
-      else if ($('#budget_text').text() === "More than 300 pesos") {
-      $('#budget_image').attr("src", "./images/assets-15.png");
-      $('#budget_text').text("Any Budget")
-      $('#budget_text').css({
-      "color" : "grey"
-      })
-      }
-      })
-      $('#popularity').on('click',function(){
-      if ($('#popularity_text').text() === "Any Popularity"){
-      $('#popularity_image').attr("src", "./images/assets-02.png");
-      $('#popularity_text').text("Not Popular")
-      $('#popularity_text').css({
-      "color" : "black"
-      })
-      }
-      else if ($('#popularity_text').text() === "Not Popular") {
-      $('#popularity_image').attr("src", "./images/assets-03.png");
-      $('#popularity_text').text("Moderately Popular")
-      $('#popularity_text').css({
-      "color" : "black"
-      })
-      }
-      else if ($('#popularity_text').text() === "Moderately Popular") {
-      $('#popularity_image').attr("src", "./images/assets-04.png");
-      $('#popularity_text').text("Very Popular")
-      $('#popularity_text').css({
-      "color" : "black"
-      })
-      }
-      else if ($('#popularity_text').text() === "Very Popular") {
-      $('#popularity_image').attr("src", "./images/assets-01.png");
-      $('#popularity_text').text("Any Popularity")
-      $('#popularity_text').css({
-      "color" : "grey"
-      })
-      }
-      })
+      });
       })

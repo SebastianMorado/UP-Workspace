@@ -1,6 +1,5 @@
 //
   “This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2017-2018”
-
   Authored by Sebastian Morado
 html
   head
@@ -22,7 +21,7 @@ html
       February 3, 2018, Sebastian Morado
       Initial html code for homepage,including search bar nav bar, filter, and footer
     nav.navbar.navbar-expand-lg.navbar-light
-      a.navbar-brand(href='/')
+      a.navbar-brand(href='./index.html')
         img#brand.d-inline-block.align-top(src='./images/assets-17.png', height='40', alt='')
       |     
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarTogglerDemo02', aria-controls='navbarTogglerDemo02', aria-expanded='false', aria-label='Toggle navigation')
@@ -30,25 +29,29 @@ html
       |     
       #navbarTogglerDemo02.collapse.navbar-collapse.navbar-right
         ul.navbar-nav.ml-auto.mt-2.mt-lg-0
-          li.nav-item
-            a.nav-link(href='/registration') Register
-          |         
-          li#sign-in.nav-item
-            a.nav-link(href='/signin') Sign-in
-          |         
-          li#sign-out.nav-item
-            a.nav-link(href='./index.html') Sign-out
+          if !isLogin
+            li.nav-item
+              a.nav-link(href='/registration') Register
+          
+          if !isLogin  
+            li#sign-in.nav-item
+              a.nav-link(href='/signin') Sign-in
+          
+          if isLogin         
+            li.nav-item
+              a.nav-link(href='/logout') Sign-out
     |   
     .container-fluid
       .row(style='background-size: cover; background-position: center 60%; background-image: linear-gradient(rgba(35,35,35,0.5),rgba(35,35,35,0.5)), url(./images/bg_photo2.jpg);')
         .col-md-12.search_bar
-          h1 Find the working space for you
-          |           
-          .container-1
-            input#search(type='search', placeholder='Search location or working space')
-            |             
-            button#search_button.icon
-              i.fa.fa-search
+          form(method='post', action='/search')
+            h1 Find the working space for you
+            |           
+            .container-1
+              input#search(type='search', placeholder='Search location or working space',name='store_name')
+              |             
+              button#search_button.icon(type=submit)
+                i.fa.fa-search
     |   
     .container-fluid
       .row.center_align

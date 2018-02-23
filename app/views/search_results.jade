@@ -1,0 +1,147 @@
+//
+  “This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2017-2018”
+  Authored by Sebastian Morado
+html
+  head
+    meta(charset='utf-8')
+    |   
+    link(rel='shortcut icon', href='')
+    |   
+    title Workspace
+    |   
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
+    |   
+    link(rel='stylesheet', type='text/css', href='css/main.css')
+    |   
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,500,600,700,800,900', rel='stylesheet')
+    |   
+    link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', rel='stylesheet')
+  body
+    nav.navbar.navbar-expand-lg.navbar-light
+      a.navbar-brand(href='./index.html')
+        img#brand.d-inline-block.align-top(src='./images/assets-17.png', height='40', alt='')
+      |     
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarTogglerDemo02', aria-controls='navbarTogglerDemo02', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      |     
+      #navbarTogglerDemo02.collapse.navbar-collapse.navbar-right
+        ul.navbar-nav.ml-auto.mt-2.mt-lg-0
+          if !isLogin
+            li.nav-item
+              a.nav-link(href='/registration') Register
+          if !isLogin  
+            li#sign-in.nav-item
+              a.nav-link(href='/signin') Sign-in
+          |         
+          if isLogin         
+            li.nav-item
+              a.nav-link(href='/logout') Sign-out
+    |   
+    .container-fluid
+      .row(style='background-size: cover; background-position: center 60%; background-image: linear-gradient(rgba(35,35,35,0.5),rgba(35,35,35,0.5)), url(./images/bg_photo2.jpg);')
+        .col-md-12.search_bar
+          form(method='post', action='/search')
+            h1 Find the working space for you
+            |           
+            .container-1
+              input#search(type='search', placeholder='Search location or working space',name='store_name')
+              |             
+              button#search_button.icon(type=submit)
+                i.fa.fa-search
+    //
+      February 17, 2018, Sebastian Morado
+      initial code for supplying search results in a table-like fashion
+    .container-fluid
+      .row.center_align
+        .col-md-12
+          span#results_head Search results:
+      // This is the start of one data entry
+      each store in stores
+        .row.search_entry
+          .col-sm-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2.entry
+            .entry_top
+              .entry_head
+                span#title #{store.name}
+                // Put the name of the workspace here
+                span#branch #{store.short_address}
+                // Put the name of the branch here
+              |           
+              .entry_distance
+                span#distance #{store.distance} km away
+            |         
+            .type
+              | Restaraunt / Cafe
+              // Put the name of the type of workspace here
+            |         
+            .filters
+              // Replace the src of the images with the filter data for the specific workspace
+              if store.has_wifi
+                img(src='/images/wifi.png')
+              else
+                img(src='/images/no-wifi.png')
+              
+              if store.has_sockets
+                img(src='/images/socket.png')
+              else
+                img(src='/images/no-socket.png')  
+
+              if store.available_late
+                img(src='/images/clock.png')
+              else
+                img(src='/images/no-clock.png')
+
+              if store.number_of_chairs == 1
+                img(src='/images/seats-1.png')
+              else if store.number_of_chairs == 2
+                img(src='/images/seats-2.png')
+              else if store.number_of_chairs == 3
+                img(src='/images/seats-3.png')
+              else
+                img(src='/images/seats-0.png')
+
+
+              if store.price == 1
+                img(src='/images/money-1.png')
+              else if store.price == 2
+                img(src='/images/money-2.png')
+              else if store.price == 3
+                img(src='/images/money-3.png')
+
+
+              if store.rating == 1
+                img(src='/images/stars-1.png')
+              else if store.rating == 2
+                img(src='/images/stars-2.png')
+              else if store.rating == 3
+                img(src='/images/stars-3.png')
+
+
+
+
+    |   
+    footer.footer-basic-centered
+      p.footer-company-motto Finding the working space best fit for you.
+      |     
+      p.footer-links
+        a(href='#') Home
+        |       &middot;
+        |       
+        a(href='#') About
+        |       &middot;
+        |       
+        a(href='#') Register
+      |     
+      p.footer-company-name MDB &amp; Co. &copy; 2018
+    |   
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+    |   
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
+    |   
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
+    |   
+    script.
+      $(function(){
+      $('#search_button').on('click',function(){
+      window.location.href = "./search_results.html";
+      })
+      })

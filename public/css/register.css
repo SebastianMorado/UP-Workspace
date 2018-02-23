@@ -1,11 +1,8 @@
-/*//
-  “This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2017-2018”
-
-  Authored by Sebastian Morado*/
-
 /*
-  February 3, 2018, Sebastian Morado
-  initial styling for sign up and sign in page
+
+“This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2017-2018”
+
+Authored by Sebastian Morado
 
 */
 
@@ -19,13 +16,17 @@ h1{
   margin-bottom: 0px !important;
 }
 
+button:disabled{
+  background-color: #dddddd !important;
+}
+
 #sign-out{
   display: none;
 }
 
 #brand{
   margin-left: 15px;
-  margin-top: 5px;
+  margin-top: 0px;
 }
 
 #invalid_container{
@@ -51,6 +52,8 @@ h1{
   padding-bottom: 80px;
   padding-top: 70px;
 }
+
+/* some CSS taken from http://cssdeck.com/labs/sleek-sign-up */
 
 .container-1{
   overflow: hidden;
@@ -134,65 +137,65 @@ h1{
 }
 
 .footer-basic-centered{
-	background-color: #64762A;
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-	box-sizing: border-box;
-	width: 100%;
-	text-align: center;
-	font: normal 18px sans-serif;
+  background-color: #64762A;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  font: normal 18px sans-serif;
 
-	padding: 45px;
-	margin-top: 80px;
+  padding: 45px;
+  margin-top: 80px;
 }
 
 .footer-basic-centered .footer-company-motto{
-	color:  #8d9093;
-	font-size: 24px;
-	margin: 0;
+  color:  #8d9093;
+  font-size: 24px;
+  margin: 0;
 }
 
 .footer-basic-centered .footer-company-name{
-	color:  #8f9296;
-	font-size: 14px;
-	margin: 0;
+  color:  #8f9296;
+  font-size: 14px;
+  margin: 0;
 }
 
 .footer-basic-centered .footer-links{
-	list-style: none;
-	font-weight: bold;
-	color:  #ffffff;
-	padding: 35px 0 23px;
-	margin: 0;
+  list-style: none;
+  font-weight: bold;
+  color:  #ffffff;
+  padding: 35px 0 23px;
+  margin: 0;
 }
 
 .footer-basic-centered .footer-links a{
-	display:inline-block;
-	text-decoration: none;
-	color: inherit;
+  display:inline-block;
+  text-decoration: none;
+  color: inherit;
 }
 
 @media only screen and (max-width: 768px) {
 
-	.footer-basic-centered{
-		padding: 35px;
-	}
+  .footer-basic-centered{
+    padding: 35px;
+  }
 
-	.footer-basic-centered .footer-company-motto{
-		font-size: 18px;
-	}
+  .footer-basic-centered .footer-company-motto{
+    font-size: 18px;
+  }
 
-	.footer-basic-centered .footer-company-name{
-		font-size: 12px;
-	}
+  .footer-basic-centered .footer-company-name{
+    font-size: 12px;
+  }
 
-	.footer-basic-centered .footer-links{
-		font-size: 14px;
-		padding: 25px 0 20px;
-	}
+  .footer-basic-centered .footer-links{
+    font-size: 14px;
+    padding: 25px 0 20px;
+  }
 
-	.footer-basic-centered .footer-links a{
-		line-height: 1.8;
-	}
+  .footer-basic-centered .footer-links a{
+    line-height: 1.8;
+  }
 }
 
 body {
@@ -246,8 +249,6 @@ body {
     position: static;
 }
 
-
-
 #signup .header {
     margin-bottom: 20px;
 }
@@ -276,6 +277,12 @@ body {
     margin-top: 25px;
 }
 
+#signup .inputs p{
+  color: #8f8f8f;
+  font-size: 14px;
+  font-weight: 300;
+}
+
 #signup .inputs label {
     color: #8f8f8f;
     font-size: 12px;
@@ -293,7 +300,7 @@ input:-moz-placeholder {
     color:    #b5b5b5;
 }
 
-#signup .inputs  input[type=email], input[type=password]  {
+#signup .inputs input[type=email], input[type=password] {
     background: #f5f5f5;
     font-size: 0.8rem;
     -moz-border-radius: 3px;
@@ -306,8 +313,6 @@ input:-moz-placeholder {
     box-shadow: inset 0px 2px 3px rgba( 0,0,0,0.1 );
     clear: both;
 }
-
-
 
 #signup .inputs input[type=email]:focus, input[type=password]:focus {
     background: #fff;
@@ -345,7 +350,7 @@ input:-moz-placeholder {
     letter-spacing: 1px;
     text-align: center;
     text-decoration: none;
-        background: #A9C358;
+    background: #A9C358;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
